@@ -33,10 +33,34 @@
   });
 
   if (form && statusMessage) {
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      statusMessage.textContent = 'Thank you! Your appointment request has been submitted. We will contact you shortly to confirm.';
-      form.reset();
+      const endpoint = form.action;
+      const formData = new FormData(form);
+
+      statusMessage.textContent = 'Submitting your request...';
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            Accept: 'application/json',
+          },
+        });
+
+        if (response.ok) {
+          statusMessage.textContent = 'Thank you! Your appointment request has been submitted. We will contact you shortly to confirm the details.';
+          form.reset();
+        } else {
+          const data = await response.json();
+          const message = data?.errors?.map((error) => error.message).join(', ') || 'There was a problem submitting the form. Please try again.';
+          statusMessage.textContent = message;
+        }
+      } catch (error) {
+        statusMessage.textContent = 'Submission failed. Please check your connection and try again.';
+      }
+
       setTimeout(() => {
         statusMessage.textContent = '';
       }, 6000);
