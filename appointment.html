@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Appointment - Eastern Healing Clinic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a class="brand-pill" href="index.html">
+          <span class="brand-circle">EHC</span>
+          Eastern Healing Clinic
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" type="button">
+          <span class="bar"></span>
+        </button>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="services.html" class="nav-link">Services</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+
+      <section class="section">
+        <div class="container contact-grid">
+          <div class="contact-panel">
+            <span class="section-pill">Get In Touch</span>
+            <h2>Plan Your Appointment</h2>
+            <p>Our staff is ready to assist with scheduling, insurance questions, and planning your first visit.</p>
+            <div class="contact-card">
+              <div><span class="icon contact-icon"><svg viewBox="0 0 24 24"><path d="M2 3h20M7 3v18a2 2 0 002 2h6a2 2 0 002-2V3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><div><strong>Phone</strong><p>+250 784 690 990<br />+250 795 799 002</p></div></div>
+              <div><span class="icon contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 5 8-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><div><strong>Email</strong><p>easternhealingclinic.health@gmail.com</p></div></div>
+              <div><span class="icon contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 00-5 5c0 5 5 11 5 11s5-6 5-11a5 5 0 00-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><div><strong>Location</strong><p>Gatsibo / Kabarore - Bihinga<br />GPS: 1.603514, 30.382014</p></div></div>
+              <div><span class="icon contact-icon"><svg viewBox="0 0 24 24"><path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><div><strong>Hours</strong><p>Mon - Fri: 8:00 AM - 8:00 PM<br />Sat - Sun: 9:00 AM - 5:00 PM</p></div></div>
+            </div>
+          </div>
+              <div class="map-frame">
+                <iframe src="https://www.google.com/maps?q=-1.6036193106056797,30.381998756154655&z=16&output=embed" aria-label="Clinic location map" loading="lazy"></iframe>
+              </div>
+
+              <section class="section">
+               <div class="container">
+                 <div class="section-header text-center">
+                   <span class="section-pill">Book Appointment</span>
+                   <h2>Request Your Visit with Eastern Healing Clinic</h2>
+                    <p>Fill out the form below to request an appointment. Our team will contact you to confirm the details and answer any questions.</p>
+                 </div>
+               </div>
+             </section>
+
+          <div class="contact-form-panel">
+            <h3>Request an Appointment</h3>
+            <form id="appointmentForm" action="https://formspree.io/f/yxkaedgq" method="POST">
+              <div class="form-row">
+                <label>Full Name<input type="text" name="name" required placeholder="John Doe" /></label>
+                <label>Email<input type="email" name="email" required placeholder="john@example.com" /></label>
+              </div>
+              <div class="form-row">
+                <label>Phone<input type="tel" name="phone" required placeholder="+250 784 690 990" /></label>
+                <label>Preferred Date<input type="date" name="date" required /></label>
+              </div>
+              <div class="form-row">
+                <label>Preferred Time<input type="time" name="time" required /></label>
+                <label>Service Type
+                  <select name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="general">General Consultation</option>
+                    <option value="hospitalization">Hospitalization</option>
+                    <option value="family_planning">Family Planning</option>
+                    <option value="gynecology">Gynecology</option>
+                    <option value="vaccination">Vaccination</option>
+                    <option value="laboratory">Laboratory Services</option>
+                    <option value="dental">Dental Services</option>
+                    <option value="minor_surgery">Minor Surgery</option>
+                    <option value="hiv_aids">HIV/AIDS Services</option>
+                    <option value="ultrasound">Ultrasound Services</option>
+                  </select>
+                </label>
+              </div>
+              <label class="textarea-label">Message (Optional)
+                <textarea name="message" rows="4" placeholder="Tell us about your health concerns or questions..."></textarea>
+              </label>
+              <button type="submit" class="btn btn-primary btn-full">Submit Appointment Request</button>
+              <div id="formStatus" class="form-status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer section-alt">
+        <div class="container footer-grid">
+          <div>
+            <div class="brand-footer"><span class="brand-circle">EHC</span><span>Eastern Healing</span></div>
+            <p>Compassionate, patient-centered healthcare with modern expertise.</p>
+          </div>
+          <div>
+            <h4>Quick Links</h4>
+            <ul class="footer-list"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="appointment.html">Book Appointment</a></li></ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <p>Gatsibo / Kabarore - Bihinga</p>
+            <p>GPS: 1.603514, 30.382014</p>
+            <p>+250 784 690 990<br />+250 795 799 002</p>
+            <p>easternhealingclinic.health@gmail.com</p>
+          </div>
+          <div>
+            <h4>Hours</h4>
+            <p>Mon - Fri: 8 AM - 8 PM<br />Sat - Sun: 9 AM - 5 PM</p>
+          </div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Eastern Healing Clinic. All rights reserved.</p><div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+      </footer>
+    </main>
+    <script src="script.js" defer></script>
+  </body>
+</html>
